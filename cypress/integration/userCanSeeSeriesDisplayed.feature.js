@@ -13,6 +13,8 @@ describe("User can see TV series being displayed", () => {
   });
 
   it("is expected to display a list of thumbnails for TV series", () => {
-    cy.get("[data-cy=series-title]").should("contain", "Blacklist");
+    cy.get("[data-cy=series-image]").within(() => {
+      cy.get(".image").should("be.visible");
+    });
   });
 });

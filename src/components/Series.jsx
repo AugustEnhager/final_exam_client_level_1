@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Card } from "semantic-ui-react";
+import Thumbnail from "./Thumbnail";
 
 const Series = () => {
   const [serie, setSerie] = useState([]);
 
-  const fetchData = () => {
+  const fetchData = async () => {
     const seriesResponse = await axios({
       method: "GET",
       url: `https://content.viaplay.se/pc-se/serier/samtliga`,
@@ -17,14 +19,18 @@ const Series = () => {
   };
 
   useEffect(() => {
-    fetchData;
+    fetchData();
   }, []);
 
-  const seriesInfo = series.map((series) => {
-    
-  })
+  const seriesInfo = serie.map((series) => {
+    return <Thumbnail series={series}/>;
+  });
 
-  return <div></div>;
+  return (
+    <div>
+      <Card>{seriesInfo}</Card>
+    </div>
+  );
 };
 
 export default Series;
