@@ -2,13 +2,14 @@ import React from "react";
 import { Header } from "semantic-ui-react";
 
 const styling = {
-  backgroundColor: "black",
+  backgroundColor: "grey",
+  
 };
 
 const Homepage = () => {
   return (
     <div>
-      <Header data-cy="homepage" style={styling}>
+      <Header data-cy="homepage" style={styling} size="medium">
         <img
           data-cy="viaplay-logo"
           src="https://kundservice.viaplay.se/wp-content/themes/viaplaycs/assets/dist/images/viaplay_white.svg"
