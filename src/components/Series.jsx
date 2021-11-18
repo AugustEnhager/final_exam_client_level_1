@@ -23,14 +23,10 @@ const Series = () => {
   }, []);
 
   const seriesInfo = serie.map((series) => {
-    return <Thumbnail series={series}/>;
+    return <Thumbnail series={series} />;
   });
 
-  return (
-    <div>
-      <Card>{seriesInfo}</Card>
-    </div>
-  );
+  return <Card>{seriesInfo}</Card>;
 };
 
 export default Series;
